@@ -1,0 +1,64 @@
+@import './variables.scss';
+@import './globalMixins.scss';
+
+.TempBar{
+    @include areasSetup;
+
+    padding: $smallMargin;
+    grid-area: tempArea;
+    max-width: 100%;
+    overflow-x: scroll;
+    display: flex;
+
+    &__Graph{
+        min-width: 20%;
+        max-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &__Column{
+            @include defaultHeader;
+            
+            margin-bottom: $basicMargin;
+            color: $textColor;
+        }
+
+        &__Date{
+            @include defaultHeader;
+
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (min-width: 320px){
+    .TempBar{
+        align-items: center;
+        &__Graph{
+            margin-right: $largeMargin;
+    
+                &__Column{
+                    font-size: $fontSize_large;
+                }
+                &__Date{
+                    font-size: $fontSize_small/1.5;
+                }
+        }
+    }
+    
+}
+
+@media screen and (min-width: 1024px){
+    .TempBar__Graph{
+        margin-right: $basicMargin;
+        
+        &__Column{
+            font-size: $fontSize_large*1.5;
+        }
+        &__Date{
+            font-size: $fontSize_small;
+        }
+    }
+}

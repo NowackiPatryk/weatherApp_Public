@@ -1,0 +1,36 @@
+@import './variables.scss';
+@import './globalMixins.scss';
+
+@keyframes appear{
+    from{
+        opacity: 0;
+        transform: rotateX(90deg);
+    }
+    to{
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}
+
+.IconsBar{
+    grid-area: iconsArea;
+    display: grid;
+    grid-gap: $basicMargin;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    &__Icon{
+        animation: appear .6s;
+        @include areasSetup;
+        text-align: center;
+        padding: $basicMargin;
+        &__Img{
+            max-width: 100%;
+            height: auto;
+        }
+        &__Value{
+            @include defaultHeader;
+
+            color: $textColor;
+        }
+    }
+}

@@ -1,0 +1,104 @@
+@import './variables.scss';
+@import './globalMixins.scss';
+
+.CityBar{
+    @include defaultHeader;
+    @include areasSetup;
+
+    grid-area: regionArea;
+    display: grid;
+    grid-gap: $basicMargin;
+    overflow-x: hidden;
+    & form{
+        grid-area: cityText;
+        position: relative;
+        &::before{
+            position: absolute;
+            left: 0;
+            top: -20px;
+            content: 'Search city';
+            opacity: .5;
+        }
+    }
+    &__CityInput{
+        @include defaultHeader;
+        
+        background: transparent;
+        border: 0;
+        font-size: $fontSize_large;
+        font-weight: bold;
+        &:focus{
+            outline: 0;
+        }
+    }
+
+
+    &__CountryName{
+        @include defaultHeader;
+
+        grid-area: countryName;
+        font-size: $fontSize_small;
+        font-weight: 200;
+        opacity: .8;
+    }
+
+    &__Hour{
+        @include defaultHeader;
+
+        grid-area: hour;
+        font-size: $fontSize_small;
+        font-weight: 100;
+    }
+    &__Temp{
+        @include defaultHeader;
+        grid-area: temperature;
+        font-size: $fontSize_large*1.5;
+    }
+}
+
+@media screen and (min-width: 320px){
+    .CityBar{
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(3,1fr);
+        grid-template-areas:
+        "cityText cityText . temperature"
+        "countryName . . temperature"
+        "hour . . .";
+
+        &__Hour{
+            font-size: $fontSize_large;
+        }
+    }
+}
+@media screen and (min-width: 768px){
+    .CityBar{
+        &__CityInput{
+            font-size: $fontSize_large*1.5;
+        }
+        &__Temp{
+            font-size: $fontSize_large*2;
+        }
+    }
+}
+@media screen and (min-width: 1024px){
+    .CityBar{
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(3,.2fr);
+        grid-template-areas:
+        "cityText cityText . temperature"
+        "countryName . . temperature"
+        "hour . . .";
+        &__CityInput{
+            font-size: $fontSize_large*1.5;
+        }
+        &__countryName{
+            font-size: $fontSize_large;
+        }
+        &__Hour{
+            font-size: $fontSize_large*1.2;
+        }
+        &__Temp{
+            font-size: $fontSize_large*3.5;
+        }
+    }
+}

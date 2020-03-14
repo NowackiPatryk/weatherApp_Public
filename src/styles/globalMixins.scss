@@ -1,0 +1,10 @@
+@mixin areasSetup{
+    background-color: $barsColor;
+    padding: $basicMargin*2;
+}
+
+@mixin defaultHeader {
+    margin: 0;
+    padding: 0;
+    color: $textColor;
+}
