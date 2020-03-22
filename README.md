@@ -2,10 +2,10 @@
 
 It's very simple weather app, where you can check weather by city. It shows temperature with timestamps for next 5 days, pressure, wind speed and humidity. 
 
-I made this app to for some reasons://
-  *Simple block layout was a good way to try CSS Grid instead of building another flexbox layout./
-  *I wanted to befriend with React Context API./
-  *Sass training and try BEM./
+I made this app to for some reasons: <br/><br/>
+  *Simple block layout was a good way to try CSS Grid instead of building another flexbox layout. <br/>
+  *I wanted to befriend with React Context API. <br/>
+  *Sass training and try BEM. <br/>
   
 
 # Getting started
